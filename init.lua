@@ -19,6 +19,13 @@ require "lazy_setup"
 require "polish"
 require "banners"
 
+--   needed for 100% transparency
+require("notify")
+  ---@diagnostic disable-next-line: missing-fields
+  .setup {
+    background_colour = "#000000",
+  }
+
 -- Yank to clipboard WSL2 https://www.reddit.com/r/neovim/comments/vxdjyb/comment/iknh207/
 vim.opt.clipboard = "unnamedplus"
 if vim.fn.has "wsl" == 1 then
