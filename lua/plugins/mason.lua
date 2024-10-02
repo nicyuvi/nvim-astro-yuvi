@@ -9,6 +9,10 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
+        "html",
+        "cssls",
+        "eslint",
+        "tailwindcss",
         -- add more arguments for adding more language servers
       },
     },
@@ -17,9 +21,13 @@ return {
   {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
+    -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
     opts = {
       ensure_installed = {
         "stylua",
+        "prettierd", -- html, css, js/ts, etc formatter
+        "eslint_d",  -- js/ts/react linter
+        "stylelint", -- scss, less, css, sass linter
         -- add more arguments for adding more null-ls sources
       },
     },
