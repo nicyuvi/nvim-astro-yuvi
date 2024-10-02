@@ -9,10 +9,7 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        "html",
-        "cssls",
-        "eslint",
-        "tailwindcss",
+        "eslint", -- JS/TS linting
         -- add more arguments for adding more language servers
       },
     },
@@ -25,9 +22,7 @@ return {
     opts = {
       ensure_installed = {
         "stylua",
-        "prettierd", -- html, css, js/ts, etc formatter
-        "eslint_d",  -- js/ts/react linter
-        "stylelint", -- scss, less, css, sass linter
+        "prettierd", -- html, css, js/ts, etc formatter | generally better/faster at formatting than eslint
         -- add more arguments for adding more null-ls sources
       },
     },
