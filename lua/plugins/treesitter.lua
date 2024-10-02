@@ -1,13 +1,13 @@
 -- Customize Treesitter
 
----@type LazySpec
 return {
-  "nvim-treesitter/nvim-treesitter",
-  opts = {
-    ensure_installed = {
-      "lua",
-      "vim",
-      -- add more arguments for adding more treesitter parsers
+  ---@type LazySpec
+  require("nvim-treesitter.configs").setup {
+    -- add more arguments for more TS parsers
+    ensure_installed = { "lua", "vim" },
+    auto_install = true,
+    highlight = {
+      enable = true,
     },
   },
 }
