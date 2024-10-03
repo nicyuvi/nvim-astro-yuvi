@@ -9,7 +9,8 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        "eslint", -- JS/TS linting
+        "eslint", -- JS/TS lsp/linting
+        "clangd", -- C++ lsp https://clangd.llvm.org/features
         -- add more arguments for adding more language servers
       },
     },
@@ -23,6 +24,7 @@ return {
       ensure_installed = {
         "stylua",
         "prettierd", -- html, css, js/ts, etc formatter | generally better/faster at formatting than eslint
+        "cpplint", -- C/C++ linter according to Google C++ style guide https://github.com/cpplint/cpplint
         -- add more arguments for adding more null-ls sources
       },
     },

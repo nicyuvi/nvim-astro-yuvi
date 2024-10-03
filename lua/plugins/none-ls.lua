@@ -14,12 +14,17 @@ return {
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 
+    -- Some builtins were removed https://github.com/nvimtools/none-ls.nvim/discussions/81
+    -- check out more here: https://github.com/nvimtools/none-ls-extras.nvim
+    -- i.e. deleted: diagnostics/cpplint.lua (use clangd / available in none-ls-extras.nvim)
+
     -- Only insert new sources, do not replace the existing ones
     -- (If you wish to replace, use `opts.sources = {}` instead of the `list_insert_unique` function)
     opts.sources = require("astrocore").list_insert_unique(opts.sources, {
       -- Set a formatter
       -- null_ls.builtins.formatting.stylua,
       -- null_ls.builtins.formatting.prettier,
+      require "none-ls.diagnostics.cpplint",
     })
   end,
 }
