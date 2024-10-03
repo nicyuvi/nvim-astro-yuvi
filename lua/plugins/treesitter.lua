@@ -1,9 +1,10 @@
 -- Customize Treesitter
+vim.opt.runtimepath:append "$HOME/.local/share/treesitter"
 
 return {
   ---@type LazySpec
   require("nvim-treesitter.configs").setup {
-    -- add more arguments for more TS parsers
+    parser_install_dir = "$HOME/.local/share/treesitter",
     ensure_installed = { "lua", "vim", "html", "css" },
     auto_install = true,
     highlight = {
