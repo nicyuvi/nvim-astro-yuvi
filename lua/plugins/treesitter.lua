@@ -5,7 +5,7 @@ return {
   ---@type LazySpec
   require("nvim-treesitter.configs").setup {
     parser_install_dir = "$HOME/.local/share/treesitter",
-    ensure_installed = { "lua", "vim", "html", "css" },
+    ensure_installed = { "lua", "vim", "html", "css", "jsonc" },
     auto_install = true,
     highlight = {
       enable = true,
