@@ -11,6 +11,7 @@ return {
         "lua_ls",
         "eslint", -- JS/TS lsp/linting
         "clangd", -- C++ lsp https://clangd.llvm.org/features
+        "ts_ls", -- TS/JS LSP
         -- add more arguments for adding more language servers
       },
     },
