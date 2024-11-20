@@ -13,6 +13,7 @@ return {
         "eslint", -- JS/TS lsp/linting
         "clangd", -- C++ LSP/Formatter https://clangd.llvm.org/features
         "ts_ls", -- TS/JS LSP
+        "pyright", -- Python LSP
         -- add more arguments for adding more language servers
       },
     },
