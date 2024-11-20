@@ -28,6 +28,7 @@ return {
         "stylua",
         "prettierd", -- html, css, js/ts, etc formatter | generally better/faster at formatting than eslint
         "cpplint", -- C/C++ linter according to Google C++ style guide https://github.com/cpplint/cpplint
+        "flake8", -- python linter
         -- add more arguments for adding more null-ls sources
       },
     },
