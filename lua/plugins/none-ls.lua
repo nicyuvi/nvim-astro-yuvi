@@ -26,6 +26,7 @@ return {
       -- null_ls.builtins.formatting.prettier,
       require "none-ls.diagnostics.cpplint",
       require "none-ls.diagnostics.flake8",
+      require "none-ls.formatting.autopep8",
     })
   end,
 }
