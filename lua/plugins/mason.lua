@@ -26,11 +26,11 @@ return {
     opts = {
       ensure_installed = {
         "stylua",
-        "prettierd", -- html, css, js/ts, etc formatter | generally better/faster at formatting than eslint
+        "prettierd", -- faster at formatting than eslint. uses local install prettier
         "cpplint", -- C/C++ linter according to Google C++ style guide https://github.com/cpplint/cpplint
         "flake8", -- python linter
         "autopep8", -- python formatter
-         -- add more arguments for adding more null-ls sources
+        -- add more arguments for adding more null-ls sources
       },
     },
   },
