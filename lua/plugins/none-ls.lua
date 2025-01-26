@@ -8,7 +8,7 @@ return {
   },
   opts = function(_, opts)
     -- opts variable is the default configuration table for the setup function call
-    -- local null_ls = require "null-ls"
+    local null_ls = require "null-ls"
 
     -- Check supported formatters and linters
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
@@ -22,9 +22,11 @@ return {
     -- (If you wish to replace, use `opts.sources = {}` instead of the `list_insert_unique` function)
     opts.sources = require("astrocore").list_insert_unique(opts.sources, {
       -- Set a formatter
+      null_ls.builtins.formatting.prettierd,
       require "none-ls.diagnostics.cpplint",
       require "none-ls.diagnostics.flake8",
       require "none-ls.formatting.autopep8",
+      require "none-ls.diagnostics.eslint", -- requires none-ls-extras.nvim
     })
   end,
 }
