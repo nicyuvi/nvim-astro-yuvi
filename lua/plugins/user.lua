@@ -5,8 +5,7 @@
 return {
 
   -- == Examples of Adding Plugins ==
-
-  "andweeb/presence.nvim",
+  -- shows lsp hints
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
@@ -21,10 +20,11 @@ return {
       local lazy = require "lazy"
       local banners = require "banners"
 
-      local function pick_color()
-        local colors = { "String", "Identifier", "Keyword", "Number" }
-        return colors[math.random(#colors)]
-      end
+      -- random color generator for alpha
+      -- local function pick_color()
+      --   local colors = { "String", "Identifier", "Keyword", "Number" }
+      --   return colors[math.random(#colors)]
+      -- end
 
       local function footer()
         local total_plugins = lazy.stats().count
