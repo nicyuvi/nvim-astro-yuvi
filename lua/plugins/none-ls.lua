@@ -26,7 +26,8 @@ return {
       require "none-ls.diagnostics.cpplint",
       require "none-ls.diagnostics.flake8",
       require "none-ls.formatting.autopep8",
-      require "none-ls.diagnostics.eslint", -- requires none-ls-extras.nvim
+      require "none-ls.diagnostics.eslint_d", -- requires none-ls-extras.nvim
+      require "none-ls.code_actions.eslint_d",
     })
   end,
 }
