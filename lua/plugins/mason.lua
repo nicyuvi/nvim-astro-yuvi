@@ -10,9 +10,10 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
+        "jsonls", -- json lsp for settings files and such
         -- "eslint", -- JS/TS lsp/linting | stopped working -- switched to eslint_d through none_ls
-        "clangd",  -- C++ LSP/Formatter https://clangd.llvm.org/features
-        "ts_ls",   -- TS/JS LSP
+        "clangd", -- C++ LSP/Formatter https://clangd.llvm.org/features
+        "ts_ls", -- TS/JS LSP
         "pyright", -- Python LSP
         -- add more arguments for adding more language servers
       },
@@ -27,10 +28,10 @@ return {
       ensure_installed = {
         "stylua",
         "prettierd", -- faster at formatting than eslint. uses local install prettier
-        "eslint_d",  -- ts/js linter -- use prettierd for formatting
-        "cpplint",   -- C/C++ linter according to Google C++ style guide https://github.com/cpplint/cpplint
-        "flake8",    -- python linter
-        "autopep8",  -- python formatter
+        "eslint_d", -- ts/js linter -- use prettierd for formatting
+        "cpplint", -- C/C++ linter according to Google C++ style guide https://github.com/cpplint/cpplint
+        "flake8", -- python linter
+        "autopep8", -- python formatter
         -- add more arguments for adding more null-ls sources
       },
     },
