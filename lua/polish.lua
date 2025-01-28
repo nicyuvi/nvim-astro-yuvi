@@ -1,18 +1,22 @@
-if true then return end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- This will run last in the setup process and is a good place to configure
 -- things like custom filetypes. This just pure lua so anything that doesn't
 -- fit in the normal config locations above can go here
+--
+--
+--
+-- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#i-want-to-use-git-instead-of-curl-for-downloading-the-parsers
+-- I kept getting tarball errors so we're using git instead of curl to get our treesitter parsers
+require("nvim-treesitter.install").prefer_git = true
 
 -- Set up custom filetypes
-vim.filetype.add {
-  extension = {
-    foo = "fooscript",
-  },
-  filename = {
-    ["Foofile"] = "fooscript",
-  },
-  pattern = {
-    ["~/%.config/foo/.*"] = "fooscript",
-  },
-}
+-- vim.filetype.add {
+--   extension = {
+--     foo = "fooscript",
+--   },
+--   filename = {
+--     ["Foofile"] = "fooscript",
+--   },
+--   pattern = {
+--     ["~/%.config/foo/.*"] = "fooscript",
+--   },
+-- }
