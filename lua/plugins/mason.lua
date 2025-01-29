@@ -14,6 +14,7 @@ return {
         -- "eslint", -- JS/TS lsp/linting | stopped working -- switched to eslint_d through none_ls
         "clangd", -- C++ LSP/Formatter https://clangd.llvm.org/features
         "ts_ls", -- TS/JS LSP
+        "tailwindcss", -- tailwind lsp
         "pyright", -- Python LSP
         -- add more arguments for adding more language servers
       },
@@ -27,8 +28,9 @@ return {
     opts = {
       ensure_installed = {
         "stylua",
-        "prettierd", -- faster at formatting than eslint. uses local install prettier
-        "eslint_d", -- ts/js linter -- use prettierd for formatting
+        -- "prettierd", -- doesn't work with prettier-plugin-tailwindcss
+        "prettier", -- faster at formatting than eslint. uses local install prettier
+        "eslint_d", -- ts/js linter -- use prettier for formatting
         "cpplint", -- C/C++ linter according to Google C++ style guide https://github.com/cpplint/cpplint
         -- add more arguments for adding more null-ls sources
       },

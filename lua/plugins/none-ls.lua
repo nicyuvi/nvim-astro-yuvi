@@ -22,7 +22,7 @@ return {
     -- (If you wish to replace, use `opts.sources = {}` instead of the `list_insert_unique` function)
     opts.sources = require("astrocore").list_insert_unique(opts.sources, {
       -- Set a formatter
-      null_ls.builtins.formatting.prettierd,
+      null_ls.builtins.formatting.prettier,
       require "none-ls.diagnostics.eslint_d", -- requires none-ls-extras.nvim
       require "none-ls.code_actions.eslint_d",
       require "none-ls.diagnostics.cpplint",
