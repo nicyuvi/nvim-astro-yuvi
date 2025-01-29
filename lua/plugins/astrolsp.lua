@@ -43,6 +43,13 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      pyright = {
+        settings = {
+          pyright = {
+            disableOrganizeImports = true, -- Let Ruff handle import sorting
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {

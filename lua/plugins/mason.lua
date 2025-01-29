@@ -32,6 +32,7 @@ return {
         "prettier", -- faster at formatting than eslint. uses local install prettier
         "eslint_d", -- ts/js linter -- use prettier for formatting
         "cpplint", -- C/C++ linter according to Google C++ style guide https://github.com/cpplint/cpplint
+        "ruff", -- python linter and formatter | don't need to enable in none-ls.lua
         -- add more arguments for adding more null-ls sources
       },
     },
