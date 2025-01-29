@@ -32,6 +32,11 @@ return {
       status.component.fill(),
       status.component.cmd_info(),
       status.component.fill(),
+      status.component.lsp(),
+      status.component.virtual_env(),
+      status.component.treesitter(),
+      -- Space
+      { provider = " ", hl = { bg = "bg" } },
       -- Add Node.js version component
       node_version_component,
       -- Space
@@ -42,9 +47,6 @@ return {
         hl = { fg = "#4FC1FF", bg = "bg" },
         padding = { left = 1, right = 1 },
       },
-      status.component.lsp(),
-      status.component.virtual_env(),
-      status.component.treesitter(),
       status.component.nav(),
     }
   end,
