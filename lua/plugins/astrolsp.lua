@@ -98,6 +98,13 @@ return {
     on_attach = function(client, bufnr)
       -- this would disable semanticTokensProvider for all clients
       -- client.server_capabilities.semanticTokensProvider = nil
+
+      -- Custom handler for TypeScript version notification
+      client.handlers["$/typescriptVersion"] = function(_, result)
+        local ts_version = result.version
+        -- Store the version in a global variable or a buffer local variable
+        vim.b.ts_version = ts_version
+      end
     end,
   },
 }
