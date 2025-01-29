@@ -30,9 +30,6 @@ return {
         "prettierd", -- faster at formatting than eslint. uses local install prettier
         "eslint_d", -- ts/js linter -- use prettierd for formatting
         "cpplint", -- C/C++ linter according to Google C++ style guide https://github.com/cpplint/cpplint
-        -- "flake8", -- builtins removed
-        -- "autopep8", -- builtins removed
-        "ruff", -- python linter and formatter
         -- add more arguments for adding more null-ls sources
       },
     },
