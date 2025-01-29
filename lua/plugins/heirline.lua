@@ -6,16 +6,27 @@ return {
     -- You can store the TypeScript version here
     vim.b.ts_version = vim.b.ts_version or "Not Available"
 
-    -- Function to fetch Node.js version
+    -- Function to fetch Node.js version, returns nil if not found
     local function get_node_version()
       local node_version = vim.fn.system("node -v"):gsub("\n", "") -- Remove newline
-      vim.b.node_version = node_version ~= "" and node_version or "N/A"
+      if node_version ~= "" then
+        vim.b.node_version = node_version
+      else
+        vim.b.node_version = nil
+      end
       return vim.b.node_version
     end
 
-    -- Heirline Node.js version component
+    -- Heirline Node.js version component, will only show if node_version and ts_version are both available
     local node_version_component = {
-      provider = function() return "Node: " .. (vim.b.node_version or get_node_version()) end,
+      provider = function()
+        -- Only show Node.js version if TypeScript version is available
+        if vim.b.ts_version and get_node_version() then
+          return "Node: " .. vim.b.node_version
+        else
+          return ""
+        end
+      end,
       hl = { fg = "#32CD32", bg = "bg", bold = true }, -- Green text
       padding = { left = 1, right = 1 },
     }
