@@ -31,6 +31,14 @@ return {
       padding = { left = 1, right = 1 },
     }
 
+    local typescript_version_component = {
+      provider = function() return vim.b.ts_version and "TS: " .. vim.b.ts_version end,
+      hl = { fg = "#4FC1FF", bg = "bg" },
+      padding = { left = 1, right = 1 },
+    }
+
+    local space = { provider = " ", hl = { bg = "bg" } }
+
     opts.statusline = { -- statusline
       hl = { fg = "fg", bg = "bg" },
       status.component.mode {
@@ -46,18 +54,11 @@ return {
       status.component.lsp(),
       status.component.virtual_env(),
       status.component.treesitter(),
-      -- Space
-      { provider = " ", hl = { bg = "bg" } },
-      -- Add Node.js version component
+      space,
       node_version_component,
-      -- Space
-      { provider = " ", hl = { bg = "bg" } },
+      space,
+      typescript_version_component,
       -- Add TypeScript version display after LSP
-      {
-        provider = function() return vim.b.ts_version and "TS: " .. vim.b.ts_version end,
-        hl = { fg = "#4FC1FF", bg = "bg" },
-        padding = { left = 1, right = 1 },
-      },
       status.component.nav(),
     }
   end,
