@@ -17,6 +17,23 @@ return {
       return vim.b.node_version
     end
 
+    -- Function to fetch Python version, returns nil if not found
+    local function get_python_version()
+      local python_version = vim.fn.system("python3 --version"):gsub("\n", "") -- Remove newline
+      if python_version ~= "" then
+        vim.b.python_version = python_version
+      else
+        vim.b.python_version = nil
+      end
+      return vim.b.python_version
+    end
+
+    local typescript_version_component = {
+      provider = function() return vim.b.ts_version and "TS: " .. vim.b.ts_version end,
+      hl = { fg = "#4FC1FF", bg = "bg" },
+      padding = { left = 1, right = 1 },
+    }
+
     -- Heirline Node.js version component, will only show if node_version and ts_version are both available
     local node_version_component = {
       provider = function()
@@ -31,9 +48,16 @@ return {
       padding = { left = 1, right = 1 },
     }
 
-    local typescript_version_component = {
-      provider = function() return vim.b.ts_version and "TS: " .. vim.b.ts_version end,
-      hl = { fg = "#4FC1FF", bg = "bg" },
+    -- Heirline Python version component, will only show if python_version is available
+    local python_version_component = {
+      provider = function()
+        if get_python_version() then
+          return vim.b.python_version
+        else
+          return ""
+        end
+      end,
+      hl = { fg = "#FFD700", bg = "bg", bold = true }, -- Gold text for Python
       padding = { left = 1, right = 1 },
     }
 
@@ -58,6 +82,8 @@ return {
       node_version_component,
       space,
       typescript_version_component,
+      space,
+      python_version_component,
       -- Add TypeScript version display after LSP
       status.component.nav(),
     }
