@@ -113,10 +113,24 @@ return {
         vim.b.ts_version = ts_version
       end
 
+      -- get environment node version if ts_ls is attached
+      if client.name == "ts_ls" then
+        local node_version = vim.fn.system("node -v"):gsub("\n", "") -- Remove newline
+        if node_version ~= "" then
+          vim.b.node_version = node_version
+        else
+          vim.b.node_version = nil
+        end
+      end
+
       -- get environment python version if pyright is attached
       if client.name == "pyright" then
         local python_version = vim.fn.system("python3 --version"):gsub("\n", "")
-        if python_version ~= "" then vim.b.python_version = python_version end
+        if python_version ~= "" then
+          vim.b.python_version = python_version
+        else
+          vim.b.python_version = nil
+        end
       end
     end,
   },
