@@ -3,8 +3,8 @@ return {
   opts = function(_, opts)
     local status = require "astroui.status"
 
-    -- You can store the TypeScript version here
     vim.b.ts_version = vim.b.ts_version or "Not Available"
+    vim.b.python_version = vim.b.python_version or "Not Available"
 
     -- Function to fetch Node.js version, returns nil if not found
     local function get_node_version()
@@ -15,17 +15,6 @@ return {
         vim.b.node_version = nil
       end
       return vim.b.node_version
-    end
-
-    -- Function to fetch Python version, returns nil if not found
-    local function get_python_version()
-      local python_version = vim.fn.system("python3 --version"):gsub("\n", "") -- Remove newline
-      if python_version ~= "" then
-        vim.b.python_version = python_version
-      else
-        vim.b.python_version = nil
-      end
-      return vim.b.python_version
     end
 
     local typescript_version_component = {
@@ -51,7 +40,7 @@ return {
     -- Heirline Python version component, will only show if python_version is available
     local python_version_component = {
       provider = function()
-        if get_python_version() then
+        if vim.b.python_version then
           return vim.b.python_version
         else
           return ""

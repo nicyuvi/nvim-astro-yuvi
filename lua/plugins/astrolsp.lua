@@ -106,11 +106,17 @@ return {
       -- this would disable semanticTokensProvider for all clients
       -- client.server_capabilities.semanticTokensProvider = nil
 
-      -- Custom handler for TypeScript version notification
+      -- get typescript version from ts_ls
       client.handlers["$/typescriptVersion"] = function(_, result)
         local ts_version = result.version
         -- Store the version in a global variable or a buffer local variable
         vim.b.ts_version = ts_version
+      end
+
+      -- get environment python version if pyright is attached
+      if client.name == "pyright" then
+        local python_version = vim.fn.system("python3 --version"):gsub("\n", "")
+        if python_version ~= "" then vim.b.python_version = python_version end
       end
     end,
   },
