@@ -3,10 +3,7 @@ return {
   opts = function(_, opts)
     local status = require "astroui.status"
 
-    -- using globals so we add some error hints if not available
-    vim.b.ts_version = vim.b.ts_version or "ts_version not available"
-    vim.b.node_version = vim.b.node_version or "node_version not available"
-    vim.b.python_version = vim.b.python_version or "python_version not available"
+    -- globals from astrolsp.lua custom on_attach
 
     local typescript_version_component = {
       provider = function() return vim.b.ts_version and "TS: " .. vim.b.ts_version end,

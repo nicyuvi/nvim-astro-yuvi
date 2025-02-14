@@ -110,7 +110,11 @@ return {
       client.handlers["$/typescriptVersion"] = function(_, result)
         local ts_version = result.version
         -- Store the version in a global variable or a buffer local variable
-        vim.b.ts_version = ts_version
+        if ts_version ~= "" then
+          vim.b.ts_version = ts_version
+        else
+          vim.b.ts_version = nil
+        end
       end
 
       -- get environment node version if ts_ls is attached
