@@ -28,8 +28,7 @@ return {
     opts = {
       ensure_installed = {
         "stylua",
-        -- "prettierd", -- doesn't work with prettier-plugin-tailwindcss
-        "prettier", -- faster at formatting than eslint. uses local install prettier
+        "prettierd", -- uses local install prettier
         "eslint_d", -- ts/js linter -- uses local eslint, if not uses bundled eslint
         "cpplint", -- C/C++ linter according to Google C++ style guide https://github.com/cpplint/cpplint
         "ruff", -- python linter and formatter | don't need to enable in none-ls.lua
