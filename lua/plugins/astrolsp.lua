@@ -106,10 +106,9 @@ return {
       -- this would disable semanticTokensProvider for all clients
       -- client.server_capabilities.semanticTokensProvider = nil
 
-      -- get typescript version from ts_ls
-      client.handlers["$/typescriptVersion"] = function(_, result)
-        local ts_version = result.version
-        -- Store the version in a global variable or a buffer local variable
+      -- get local ts version if ts_ls is attached
+      if client.name == "ts_ls" then
+        local ts_version = vim.fn.system("npx tsc --version"):gsub("\n", "") -- Remove newline
         if ts_version ~= "" then
           vim.b.ts_version = ts_version
         else

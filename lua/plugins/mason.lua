@@ -13,7 +13,7 @@ return {
         "jsonls", -- json lsp for settings files and such
         -- "eslint", -- JS/TS lsp/linting | stopped working -- switched to eslint_d through none_ls
         "clangd", -- C++ LSP/Formatter https://clangd.llvm.org/features
-        "ts_ls", -- TS/JS LSP | we need this for vim.b.ts_version displayed in heirline
+        "ts_ls", -- TS/JS LSP | we need this for vim.b.ts_version and vim.b.node_version displayed in heirline
         "tailwindcss", -- tailwind lsp
         "pyright", -- Python LSP
         -- add more arguments for adding more language servers
