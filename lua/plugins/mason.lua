@@ -16,6 +16,7 @@ return {
         "ts_ls", -- TS/JS LSP | we need this for vim.b.ts_version and vim.b.node_version displayed in heirline
         "tailwindcss", -- tailwind lsp
         "pyright", -- Python LSP
+        "angularls", -- Angular LSP
         -- add more arguments for adding more language servers
       },
     },
