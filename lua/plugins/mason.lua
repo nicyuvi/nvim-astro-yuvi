@@ -17,7 +17,6 @@ return {
         "tailwindcss", -- tailwind lsp
         "pyright", -- Python LSP
         "angularls", -- Angular LSP
-        "html", -- html LSP
         "emmet_language_server", -- for various html, css, react, angular, etc
         -- add more arguments for adding more language servers
       },
