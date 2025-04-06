@@ -23,8 +23,10 @@ return {
     opts.sources = require("astrocore").list_insert_unique(opts.sources, {
       -- Set a formatter
       null_ls.builtins.formatting.prettierd,
-      require "none-ls.diagnostics.eslint_d", -- requires none-ls-extras.nvim
+      null_ls.builtins.diagnostics.markuplint,
+      require "none-ls.diagnostics.eslint_d",
       require "none-ls.code_actions.eslint_d",
+      require "none-ls.formatting.eslint_d", -- if we want prettier to format, use eslintConfigPrettier
       require "none-ls.diagnostics.cpplint",
     })
   end,
