@@ -17,6 +17,7 @@ return {
         "tailwindcss", -- tailwind lsp
         "pyright", -- Python LSP
         "angularls", -- Angular LSP
+        "html", -- html LSP
         -- add more arguments for adding more language servers
       },
     },
