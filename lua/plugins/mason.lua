@@ -33,7 +33,6 @@ return {
         "eslint_d", -- ts/js/react linter -- uses local eslint, if not uses bundled eslint. does not handle htmlangular
         "cpplint", -- C/C++ linter according to Google C++ style guide https://github.com/cpplint/cpplint
         "ruff", -- python linter and formatter | don't need to enable in none-ls.lua
-        "markuplint", -- mainly need this for htmlangular. no angular parser. better than nothing
         -- add more arguments for adding more null-ls sources
       },
     },
