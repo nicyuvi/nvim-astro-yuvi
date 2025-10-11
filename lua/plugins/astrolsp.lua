@@ -30,7 +30,7 @@ return {
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
         -- "lua_ls",
       },
-      timeout_ms = 1000, -- default format timeout
+      timeout_ms = 3000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
       --   return true
       -- end
@@ -108,11 +108,11 @@ return {
 
       -- get local ts version if ts_ls is attached
       if client.name == "ts_ls" then
-        local ts_version = vim.fn.system("npx tsc --version"):gsub("\n", "") -- Remove newline
-        if ts_version ~= "" then
-          vim.b.ts_version = ts_version
-        else
-          vim.b.ts_version = nil
+        if vim.bo.filetype == "typescript" or vim.bo.filetype == "typescriptreact" then
+          local ts_version = vim.fn.system("npx tsc --version"):gsub("\n", "")
+          if ts_version ~= "" then
+            vim.b.ts_version = ts_version
+          end
         end
       end
 
