@@ -110,9 +110,7 @@ return {
       if client.name == "ts_ls" then
         if vim.bo.filetype == "typescript" or vim.bo.filetype == "typescriptreact" then
           local ts_version = vim.fn.system("npx tsc --version"):gsub("\n", "")
-          if ts_version ~= "" then
-            vim.b.ts_version = ts_version
-          end
+          if ts_version ~= "" then vim.b.ts_version = ts_version end
         end
       end
 
