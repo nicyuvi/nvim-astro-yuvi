@@ -32,6 +32,7 @@ return {
         "ts_ls",
         "html",
         "cssls",
+        "jsonls",
       },
       timeout_ms = 3000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
