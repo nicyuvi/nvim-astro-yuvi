@@ -31,11 +31,11 @@ return {
              "javascriptreact",
              "typescriptreact",
              "html", -- angular templates
+             "css",
           },
         }
       ),
       require "none-ls.code_actions.eslint_d",
-      require "none-ls.formatting.eslint_d", -- if we want prettier to format, use eslintConfigPrettier
       require "none-ls.diagnostics.cpplint",
     })
   end,
