@@ -17,6 +17,8 @@ return {
         "pyright", -- Python LSP
         "angularls", -- Angular LSP
         "emmet_language_server", -- for various html, css, react, angular, etc
+        "html",
+        "cssls",
         -- add more arguments for adding more language servers
       },
     },
