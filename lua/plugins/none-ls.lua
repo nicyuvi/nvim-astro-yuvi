@@ -23,6 +23,7 @@ return {
     opts.sources = require("astrocore").list_insert_unique(opts.sources, {
       -- Set a formatter
       null_ls.builtins.formatting.prettierd,
+      null_ls.builtins.diagnostics.markuplint,
       require("none-ls.diagnostics.eslint_d").with(
         {
            filetypes = {
@@ -30,7 +31,6 @@ return {
              "typescript",
              "javascriptreact",
              "typescriptreact",
-             "html", -- angular templates
              "css",
           },
         }
