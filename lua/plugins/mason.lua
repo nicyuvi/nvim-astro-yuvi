@@ -19,6 +19,7 @@ return {
         "emmet_language_server", -- for various html, css, react, angular, etc
         "html",
         "cssls",
+        "jdtls", -- java lsp
         -- add more arguments for adding more language servers
       },
     },
