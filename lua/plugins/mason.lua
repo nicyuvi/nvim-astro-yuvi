@@ -20,6 +20,7 @@ return {
         "html",
         "cssls",
         "jdtls", -- java lsp
+        "sqlls", -- sql lsp
         -- add more arguments for adding more language servers
       },
     },
@@ -37,6 +38,7 @@ return {
         "markuplint",
         "cpplint", -- C/C++ linter according to Google C++ style guide https://github.com/cpplint/cpplint
         "ruff", -- python linter and formatter | don't need to enable in none-ls.lua
+        "sqruff", -- sql linter/formatter
         -- add more arguments for adding more null-ls sources
       },
     },
