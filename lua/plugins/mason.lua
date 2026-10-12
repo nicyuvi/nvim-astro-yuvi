@@ -20,7 +20,7 @@ return {
         "html",
         "cssls",
         "jdtls", -- java lsp
-        "sqlls", -- sql lsp
+        "sqls", -- sql lsp, sqlls doesn't work by default
         -- add more arguments for adding more language servers
       },
     },
